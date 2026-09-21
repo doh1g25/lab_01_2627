@@ -2,6 +2,9 @@
 format:
   html:
     theme: cosmo
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 ## Objectives {.unnumbered}
@@ -9,7 +12,6 @@ format:
 - Have access to `R` through `RStudio`, `VS Code` or another GUI.
 - Have basic access to the labs via GitHub classroom.
 - Perform exploratory data analysis of some sample datasets.
-
 
 ## Quarto and GitHub Classroom
 
@@ -24,23 +26,25 @@ This is important for reproducibility; the document we write contains all the do
 
 ### Task 1
 
-::: {.callout-tip}
-The labs will contain some tasks for you to complete yourself. These will be checklists, as below.
+::: callout-tip
+The labs will contain some tasks for you to complete yourself.
+These will be checklists, as below.
 
-Sometimes there will be areas for you to edit. These will have _marked_ text that [looks like this]{.mark}.
+Sometimes there will be areas for you to edit.
+These will have *marked* text that [looks like this]{.mark}.
 :::
 
 - [x] Check items off as you complete them.
-- [ ] Create your personal student repository by following the instructions at the link above.
-- [ ] Clone the repository, containing this file, to your local machine.
-- [ ] Open these instructions in Visual Studio Code or RStudio.
-- [ ] Fill out your name in the box below.
+- [x] Create your personal student repository by following the instructions at the link above.
+- [x] Clone the repository, containing this file, to your local machine.
+- [x] Open these instructions in Visual Studio Code or RStudio.
+- [x] Fill out your name in the box below.
 
-::: {.callout-note}
-Hi, my name is [_fill out your name here_]{.mark}.
+::: callout-note
+Hi, my name is [Dylan]{.mark}.
 :::
 
-- [ ] Knit the document to check that the output looks okay.
+- [x] Knit the document to check that the output looks okay.
 - [ ] Save, and push the output back up to GitHub. (Hint: see the instructions [here](https://soton-fds.github.io/github-tutorial.html))
 - [ ] Check that you can see the modified version in your personal GitHub repo.
 
@@ -57,7 +61,7 @@ This dataset was curated and made accessible by Allison Horst and collaborators,
 
 The next code block loads and processes the dataset, stored in `penguins.csv` in the repository.
 
-::: {.callout-tip}
+::: callout-tip
 If you look at the `.qmd` file in RStudio or VS Code, you will see the code appears surrounded by some backtick characters (\`).
 These tell `quarto` that what is contained between the backticks is code.
 The text after the backticks (`{r}`) tells us that this is `R` code.
@@ -76,7 +80,9 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
 
 ### Tricks for Reproducibility
 
-The code above is **not very well written**; it doesn't explain what is happening on each line. This is bad for reproducibility. Another scientist reading your code might not understand what is happening!
+The code above is **not very well written**; it doesn't explain what is happening on each line.
+This is bad for reproducibility.
+Another scientist reading your code might not understand what is happening!
 
 To improve this we can add *comments* to the code.
 Comments are basically text that is ignored by the language, so that we can annotate it to explain it to other readers.
@@ -86,7 +92,7 @@ Comments are basically text that is ignored by the language, so that we can anno
 print("Hello world!")  # We can also add comments at the end of lines.
 ```
 
-### Task 2 
+### Task 2
 
 - [ ] Add comments before each line of code in the blocks above, explaining what is happening on each line.
 - [ ] Add some interpretation of the plot (in `markdown`, not as comments), after the code block.
