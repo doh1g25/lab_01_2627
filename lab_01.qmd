@@ -45,8 +45,8 @@ Hi, my name is [Dylan]{.mark}.
 :::
 
 - [x] Knit the document to check that the output looks okay.
-- [ ] Save, and push the output back up to GitHub. (Hint: see the instructions [here](https://soton-fds.github.io/github-tutorial.html))
-- [ ] Check that you can see the modified version in your personal GitHub repo.
+- [x] Save, and push the output back up to GitHub. (Hint: see the instructions [here](https://soton-fds.github.io/github-tutorial.html))
+- [x] Check that you can see the modified version in your personal GitHub repo.
 
 ## Palmer Penguins in `R`
 
@@ -70,13 +70,19 @@ When `quarto` compiles this document to HTML or PDF, the code is run, and the ou
 
 ```{r}
 library(tidyverse)
+# reads data from "penguins.csv" and assigns it to the variable "penguins"
 penguins <- read_csv("data/penguins.csv")
+# returns data from the first 6 rows of data
 head(penguins)
+# creates a small statistical summary of data
 summary(penguins)
+# generates a plot of the data in penguins, defining both axes
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
   theme_minimal()
 ```
+
+`the plot shows a positive correlation between flipper length and body mass of penguins, and distinguishes the differences between species. In general, Gentoo penguins have both a larger body mass and flipper length. Adelie and Chinstrap penguins are similar in across these metrics`
 
 ### Tricks for Reproducibility
 
@@ -92,11 +98,23 @@ Comments are basically text that is ignored by the language, so that we can anno
 print("Hello world!")  # We can also add comments at the end of lines.
 ```
 
+
+
+
+
 ### Task 2
 
-- [ ] Add comments before each line of code in the blocks above, explaining what is happening on each line.
-- [ ] Add some interpretation of the plot (in `markdown`, not as comments), after the code block.
-- [ ] Create a second plot, below, that colours the dots by sex instead of by species.
+- [x] Add comments before each line of code in the blocks above, explaining what is happening on each line.
+- [x] Add some interpretation of the plot (in `markdown`, not as comments), after the code block.
+- [x] Create a second plot, below, that colours the dots by sex instead of by species.
+
+```{r}
+penguins <- read.csv("data/penguins.csv")
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = sex)) +
+  geom_point() +
+  theme_minimal()
+```
+
 
 If you don't know how to do something in `R` you have a few options:
 
@@ -106,9 +124,16 @@ If you don't know how to do something in `R` you have a few options:
 
 The next task asks you to *extend* what we have already done using new functionality of `ggplot`.
 
-- [ ] Create a third plot that uses colour for species and changes the *shape* of the points based on the sex.
+- [x] Create a third plot that uses colour for species and changes the *shape* of the points based on the sex.
 - [ ] Commit and push your solutions to GitHub with an informative message.
 - [ ] Make sure your changes are visible on GitHub.
+
+```{r}
+penguins <- read.csv("data/penguins.csv")
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, shape = sex)) +
+  geom_point() +
+  theme_minimal()
+```
 
 From now on I won't remind you to do this - you should get into the habit of doing it whenever you reach a natural point to commit!
 
